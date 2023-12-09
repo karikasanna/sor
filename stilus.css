@@ -1,0 +1,167 @@
+/*1.	Minden elem box-sizing méretét állítsd be border-box-ra!
+2.	A betűcsalád legyen Arial, Verdana, sans-serif!
+3.	A betűszín beige, a betűméret 10pt, a külső és a belső margó 0px. 
+4.	A háttérkép legyen a minta szerint. */
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Verdana, sans-serif;
+    color: beige;
+    font-size: 10pt;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-image: url(design/teglafal.jpg);
+}
+
+/*6.	A main elem szélességét állítsd 80%-ra.
+7.	A main elem ne lehessen nagyobb, mint 1000px.
+8.	Állítsd a teljes tartalmat a böngésző közepére!
+9.	A main elem háttérszíne legyen RGB kóddal megadva: #333333
+*/
+
+main{
+    width: 80%;
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgb(51, 51, 51);
+}
+
+/*
+10.	A header elembe állíts be a háttérképet!
+11.	A header magassága legyen 300px;
+12.	A háttér méretezését állítsd cover-re: background-size:cover;
+13.	A fejlécben lévő szöveg legyen vastag betűs!
+14.	A fejlécben lévő szöveg betű típusa legyen Garamond.
+15.	A betűk közti távolság 4px, a betűméret 32px, legyen balra igazítva, és felső és a bal oldali belső margó 30px. 
+*/
+
+header{
+    background-image: url(design/beer-new_401732638.jpg);
+    height: 300px;
+    background-size: cover;
+    grid-area: h;
+}
+
+/*23.	Az article elemen belül a bekezdések legyenek sorkizárt igazításúak. 
+24.	Az article elemben a bekezdések betű mérete legyen 10px!
+25.	Az article elemben a cím betű mérete legyen 15px!
+26.	Az article elemen belül a kép ússzon el a szöveg mellé balra. 
+27.	A felsorolások előtti jel legyen square (négyzet). */
+
+
+article{
+    grid-area: a;
+    display: grid;
+    grid-template-areas: 
+        "ah ah ah"
+        "i l l";
+    background-color: black;
+    max-width: 700px;
+}
+
+article img{
+    grid-area: i;
+    float: left;
+    max-width: 200px;
+    max-height: 200px;
+    border: solid 1px rgb(136, 136, 136);
+    border-radius: 0.5rem;
+    padding: 8px
+}
+
+article ul{
+    grid-area: l;
+    text-align: justify;
+    font-size: 10px;
+    padding-inline: 20px;
+}
+
+article li {
+    list-style: square;
+}
+
+article h1{
+    grid-area: ah;
+    font-size: 15px;
+}
+
+/*16.	Készítsd el a navigációt a mintának megfelelően.
+17.	A navigáció li elemei előtt ne legyen felsorolásjel!
+18.	A li elemeket vegye körbe 1 px vastag folytonos fehér vonal, sarkai legyenek lekerekítettek. 
+19.	Ha a navigáció li eleme fölé viszem az egeret, a háttérszín változzon világos színűre!
+20.	A navigáció linkjeiről szedd le az aláhúzást!
+21.	A navigáció linkjeinek betűszíne legyen  piros, ha föléjük viszem az egeret változzanak fehérre.
+22.	A navigáció linkjei legyenek vastag betűsek. 
+*/
+
+nav{
+    grid-area: n;
+    padding: 15px; 
+}
+
+nav li{
+    list-style: none;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 10px;
+    width: 100%;
+}
+
+nav li:hover{
+    background-color: rgb(144, 142, 142);
+}
+
+nav a{
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    padding: 15px
+}
+
+nav a:hover{
+    color: white;
+}
+
+footer{
+    grid-area: f;
+    background-color: rgb(156, 154, 154);
+    padding: 10px;
+}
+
+header h1{
+    font-weight: bold;
+    font-family: Garamond;
+    letter-spacing: 4px;
+    font-size: 32px;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+main{
+    display: grid;
+    grid-template-areas: 
+        "h h h"
+        "a a n"
+        "f f f";
+
+}
+
+@media screen and (max-width: 700px) {
+    main {
+      grid-template-areas:
+        "h"
+        "n"
+        "a"
+        "f";
+    }
+    article{
+        grid-template-areas: 
+        "ah"
+        "i"
+        "l"
+    };
+}
