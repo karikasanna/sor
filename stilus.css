@@ -150,6 +150,8 @@ main{
 
 }
 
+/*28.	Az oldal legyen reszponzív! 700 px alatt a main közvetlen gyerekelemei egymás alatt helyezkedjenek el.*/
+
 @media screen and (max-width: 700px) {
     main {
       grid-template-areas:
